@@ -9,8 +9,9 @@ la cantidad cobrada hasta el momento y la cantidad pendiente de cobro.'''
 facturas = {'01': 20000,'02': 35000, '03':12000}
 
 
-def crear_factura(facturas, ide, costo):
-    if ide not in facturas:    
+def crear_factura(facturas, ide):
+    if ide not in facturas:
+        costo = int(input("Ingrese el costo de la factura: ")) 
         facturas[ide] = costo
     else:
         print(f'La factura {ide} se encuentra en lista')
@@ -63,8 +64,7 @@ if __name__ == '__main__':
 
         if command == 'C':
             ide = input("Ingrese el número de la factura: ")
-            costo = int(input("Ingrese el costo de la factura: "))
-            crear_factura(facturas, ide, costo)
+            crear_factura(facturas, ide)
             print(facturas)
         elif command == 'P':
             ide = get_factura_ide()
